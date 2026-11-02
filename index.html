@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seojin Myung</title>
+<meta name="description" content="Seojin Myung — mathematics master's student at the University of Windsor. Higher category theory, operads, derived algebraic geometry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{
+    --bg:#fbfaf7; --surface:#ffffff; --text:#1f2328; --muted:#5f6670;
+    --line:#e6e2da; --accent:#2f5d8a; --accent-soft:#e8eff6;
+    --maxw:760px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#131517; --surface:#1a1d21; --text:#e8e6e1; --muted:#a2a7ad;
+      --line:#2c3137; --accent:#8db4dc; --accent-soft:#1f2c3a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#131517; --surface:#1a1d21; --text:#e8e6e1; --muted:#a2a7ad;
+    --line:#2c3137; --accent:#8db4dc; --accent-soft:#1f2c3a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .15s}
+  a:hover{border-bottom-color:var(--accent)}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:500; letter-spacing:-0.01em; margin:0}
+  h1{font-size:2.4rem; line-height:1.15}
+  h2{font-size:1.45rem; margin-bottom:.9rem; padding-bottom:.4rem; border-bottom:1px solid var(--line)}
+  h3{font-size:1.1rem; margin-top:1.2rem; margin-bottom:.3rem}
+  p{margin:0 0 1rem}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 16px}
+
+  header.site{padding:3.2rem 0 2.2rem}
+  .hero{display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap}
+  .hero .photo{
+    width:150px; height:150px; border-radius:14px; flex:none;
+    background:var(--accent-soft); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--muted); font-size:.85rem; overflow:hidden;
+  }
+  .hero .photo img{width:100%; height:100%; object-fit:cover; display:block}
+  .hero .intro{flex:1 1 320px}
+  .role{color:var(--muted); margin:.5rem 0 0; font-size:1.02rem}
+  .contact{margin-top:1rem; display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; font-size:.95rem}
+  .contact span{color:var(--muted)}
+
+  nav.top{position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  nav.top ul{list-style:none; margin:0; padding:0; display:flex; gap:1.3rem; overflow-x:auto; font-size:.93rem}
+  nav.top li a{display:block; padding:.75rem 0; color:var(--muted); white-space:nowrap; border-bottom:2px solid transparent}
+  nav.top li a:hover{color:var(--text); border-bottom-color:var(--accent)}
+
+  main section{padding:2.4rem 0}
+  main section + section{border-top:1px solid var(--line)}
+
+  ul.list{list-style:none; padding:0; margin:0}
+  ul.list li{padding:.55rem 0; display:grid; grid-template-columns:7.5rem 1fr; gap:1rem}
+  ul.list li .when{color:var(--muted); font-size:.92rem; padding-top:.1em}
+  ul.list li .what em{font-style:normal; color:var(--muted)}
+  @media (max-width:520px){ ul.list li{grid-template-columns:1fr; gap:.1rem} }
+
+  .tags{display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.4rem}
+  .tags span{background:var(--accent-soft); color:var(--accent); border-radius:999px; padding:.18rem .7rem; font-size:.86rem}
+
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1.3rem 1.4rem; margin-top:1rem}
+  .card .btn{display:inline-block; margin-top:.6rem; padding:.5rem 1rem; border-radius:8px; background:var(--accent); color:#fff; font-weight:500; font-size:.93rem; border:none}
+  .card .btn:hover{opacity:.9; border-bottom-color:transparent}
+
+  footer.site{padding:2rem 0 3rem; color:var(--muted); font-size:.88rem; border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap hero">
+    <div class="photo">
+      <!-- 사진을 넣으려면 아래 줄의 주석을 풀고 photo.jpg 를 같은 폴더에 두세요 -->
+      <!-- <img src="photo.jpg" alt="Seojin Myung"> -->
+      photo
+    </div>
+    <div class="intro">
+      <h1>Seojin Myung</h1>
+      <p class="role">Master's student in Mathematics<br>University of Windsor, Canada</p>
+      <div class="contact">
+        <a href="mailto:YOUR_EMAIL@uwindsor.ca">YOUR_EMAIL@uwindsor.ca</a>
+        <a href="cv.pdf">CV (PDF)</a>
+        <a href="https://github.com/YOUR_GITHUB">GitHub</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="top">
+  <div class="wrap">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#papers">Papers</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#ywmk">Young Women in Maths, Korea</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I am a second-year master's student in mathematics at the University of Windsor, working with
+      <a href="#">ADVISOR NAME</a>. Before coming to Windsor I studied in Korea.</p>
+    <p>I am interested in homotopical and higher-categorical foundations: model categories and localisation,
+      $\infty$-categories, operads and $A_\infty$-structures, and derived algebraic geometry.
+      I am currently applying to PhD programmes.</p>
+    <p>Languages: Korean (native), English, Japanese.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <p>My work sits at the interface of higher category theory and derived algebraic geometry.
+      Broadly, I like questions that can be phrased in terms of descent and localisation rather than
+      explicit algebra or geometry, and I enjoy the model-categorical side of the subject.</p>
+    <div class="tags">
+      <span>higher category theory</span>
+      <span>model categories</span>
+      <span>operads &amp; $A_\infty$-algebras</span>
+      <span>derived algebraic geometry</span>
+      <span>stacks</span>
+    </div>
+    <h3>Master's thesis</h3>
+    <p>ONE OR TWO SENTENCES ON THE THESIS TOPIC (optional).</p>
+  </section>
+
+  <section id="papers">
+    <h2>Papers &amp; preprints</h2>
+    <ul class="list">
+      <li>
+        <span class="when">in preparation</span>
+        <span class="what"><strong>TITLE OF PAPER</strong><br><em>with COAUTHORS, if any</em></span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="talks">
+    <h2>Talks &amp; seminars</h2>
+    <p>I am a regular speaker in the graduate reading seminars at Windsor.</p>
+    <ul class="list">
+      <li>
+        <span class="when">Fall 2026</span>
+        <span class="what">Reading seminar on operads and $A_\infty$-algebras <em>(Loday–Vallette)</em></span>
+      </li>
+      <li>
+        <span class="when">2025–26</span>
+        <span class="what">Reading seminar on homological algebra and model categories <em>(Weibel, Hovey)</em></span>
+      </li>
+      <li>
+        <span class="when">Summer 2026</span>
+        <span class="what">Participant, summer school <em>Higher categories for working mathematicians</em></span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <ul class="list">
+      <li>
+        <span class="when">2024–present</span>
+        <span class="what">Tutor, Maths &amp; Stats Learning Centre, University of Windsor</span>
+      </li>
+      <li>
+        <span class="when">TERM</span>
+        <span class="what">Teaching assistant, COURSE NAME</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="ywmk">
+    <h2>Young Women in Maths, Korea</h2>
+    <div class="card">
+      <p>ONE PARAGRAPH ON THE PURPOSE OF THE COMMUNITY — e.g. a Discord community for young women
+        (students and early-career researchers) in mathematics connected to Korea, to share
+        resources, ask questions, and support each other.</p>
+      <p>Everyone who identifies with the community's purpose is welcome.</p>
+      <a class="btn" href="https://discord.gg/YOUR_INVITE_CODE">Join the Discord server</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    Last updated November 2026.
+  </div>
+</footer>
+
+</body>
+</html>
